@@ -26,7 +26,7 @@ public class NRev {
         System.out.println("enter 'ok' when finished:");
         StringBuilder build = new StringBuilder();
         String forward;
-        while (!(forward = scan()).equals("OK")) {
+        while (!(forward = scan()).equals("ok")) {
             build.append(forward);
         }
         output(build.toString());
@@ -40,13 +40,14 @@ public class NRev {
     }
 
     private static String reverse (char c) {
-        return c == 'A' ? "T" :
-               c == 'T' ? "A" :
-               c == 'C' ? "G" :
-               c == 'G' ? "C" : ""+c;
+        return c == 'a' ? "T" :
+               c == 't' ? "A" :
+               c == 'c' ? "G" :
+               c == 'g' ? "C" :
+               c == 'n' ? "N" : ""+c;
     }
 
     private static String scan () {
-        return scan.next().trim().toUpperCase();
+        return scan.next().trim().toLowerCase();
     }
 }
