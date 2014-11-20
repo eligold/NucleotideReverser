@@ -16,8 +16,8 @@ public class NRev {
         } else {
             System.out.println("enter a sequence on a single line:");
             output(scan());
-            scan.close();
         }
+        scan.close();
     }
 
     private static void multiLine() {
@@ -29,8 +29,6 @@ public class NRev {
         while (!(forward = scan()).equals("OK")) {
             build.append(forward);
         }
-        scan.close();
-
         output(build.toString());
     }
     private static void output(String forward) {
