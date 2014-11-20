@@ -5,21 +5,24 @@ public class NRev {
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-        if(args[0].equals("-m") || args[0].equals("multiline")) {
-            multiLine();
-        } else if (args.length > 0) {
-            System.out.println("Program can only be called with no args "+
-                    "or the -m option for multiple line sequences");
-            System.exit(1);
+        if (args.length > 0) {
+            if(args[0].equals("-m") || args[0].equals("multiline")) {
+                multiLine();
+            } else {
+                System.out.println("Program can only be called with no args " +
+                		"or the -m option for multiple line sequences");
+                System.exit(1);
+            }
         } else {
-            System.out.println("enter a sequence on a single line");
+            System.out.println("enter a sequence on a single line:");
             output(scan());
             scan.close();
         }
     }
+
     private static void multiLine() {
-        System.out.println("enter a sequence here. You may use as many "+
-                "lines as you need");
+        System.out.println("enter a sequence here. You may use as many lines "+
+                "as you need");
         System.out.println("enter 'ok' when finished:");
         StringBuilder build = new StringBuilder();
         String forward;
